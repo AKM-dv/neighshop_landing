@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neighshop offers a wide range of digital services including website development, digital marketing, graphic designing, and AI consulting to help your business grow.">
+    <meta name="keywords" content="Digital Marketing, Website Development, Graphic Designing, Video Editing, AI Consulting">
+    <meta name="author" content="Neighshop">
+    <title>Neighshop - One Stop Solution for Your Digital Service Needs</title>
+    <link rel="canonical" href="https://www.neighshop.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+    <meta property="og:title" content="Neighshop - One Stop Solution for Your Digital Service Needs" />
+     
+<meta property="og:description" content="Neighshop offers a wide range of digital services including website development, digital marketing, graphic designing, and AI consulting." />
+<meta property="og:image" content="https://www.neighshop.com/loader.png" />
+<meta property="og:url" content="https://www.neighshop.com" />
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Neighshop",
+          "url": "https://www.neighshop.com",
+          "logo": "https://www.neighshop.com/logo.png",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61550281270177",
+            "https://www.instagram.com/neighshop_original/"
+          ]
+        }
+        </script>
+        
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #f0f0f0;
+            cursor: url('cursor.png'), auto;
+        }
+
+
+.custom-cursor {
+    cursor: url('cursor.png'), auto;
+}
+        
+        #body1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+        #model-container {
+            width: 100%;
+            height: 100%;
+            max-width: 800px; /* Max width for larger screens */
+            max-height: 800px; /* Max height for larger screens */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        #loading-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensure the loading image scales properly */
+        }
+  
+    </style>
+</head>
+<body>
+
+    <audio id="bg-audio" loop autoplay>
+        <source src="bg.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // JavaScript to control the audio (if needed)
+        const audio = document.getElementById('bg-audio');
+
+        // Automatically play when the page loads
+        audio.play();
+
+        // Optionally, you can adjust volume or mute it
+        audio.volume = 0.1; // Set volume to 10% (adjust as needed)
+    </script>
+  
+    <div class="nav" style="padding: 1em;display: flex;justify-content: center;">
+        <ul style="width: 100%;min-width: 300px;margin-top: 1em;max-width: 900px;;list-style: none;display: flex;justify-content: space-between;padding: 0em 1em;align-items: center;">
+            <li><img src="logo.png" alt="Neighshop Logo - Digital Services" ></li>
+            <li style="font-family: 'Poppins';font-size: 1.55rem;">Neighshop</li>
+        </ul>
+    </div>
+
+
+    <div class="divv" style="height: 65vh;">
+
+        <div class="slit" style="margin-top: 1em;padding: 1em;background-color: black;overflow: hidden;">
+
+            <ul id="services-list" style="display: flex;width: max-content;text-wrap: no-wrap;gap: 3em;background-color: black;color: white;list-style: disc;font-family: 'Poppins';font-size: 1.25rem;">
+                <li>Digital Marketing</li>
+                <li>Website Development</li>
+                <li>Graphic Designing</li>
+                <li>Video Editing</li>
+                <li>App Development</li>
+                <li>Software Development</li>
+                <li>AI Consulting</li>
+            </ul>
+        
+        </div>
+        
+        <script>
+            const servicesList = document.getElementById('services-list');
+            const clone = servicesList.cloneNode(true); // Clone the entire list to create continuous effect
+            servicesList.appendChild(clone); // Append the clone after the original list
+        
+            // Make the list scroll horizontally using JS
+            let scrollSpeed = 2; // Adjust this for scrolling speed (higher = faster)
+            let currentScrollPosition = 0;
+        
+            function scrollList() {
+                currentScrollPosition -= scrollSpeed; // Move left
+                if (currentScrollPosition <= -servicesList.scrollWidth / 2) {
+                    currentScrollPosition = 0; // Reset scroll position for infinite loop
+                }
+                servicesList.style.transform = `translateX(${currentScrollPosition}px)`;
+            }
+        
+            setInterval(scrollList, 20); // Scroll every 20ms to create smooth movement
+        </script>
+
+        <div class="heading" style="text-align: center;margin-top: 2em;padding: 1em;font-family: 'Poppins';display: flex;justify-content: center;">
+
+            <h1  style="font-weight: 300;max-width: 700px;">One Stop Solution for all your <strong>Digital Service</strong>  needs</h1>
+            <style>
+                @media screen and (min-width : 700px){
+                    .heading h1{
+                    font-size: 2.5rem;
+                }
+
+                }
+                
+            </style>
+
+        </div>
+
+        <div class="opsli" style="padding: 1em;">
+            <style>
+                .opsli li{
+                    display: flex;
+                    gap: 0.7em;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.7em 1.35em;
+                    flex-flow: row-reverse;
+                    cursor: pointer;
+                   
+
+                }
+                .ico{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            </style>
+            <ul style="display: flex;flex-wrap: wrap;justify-content: center;gap: 1em;font-family: 'Poppins';list-style: none;align-items: center;">
+
+                <a href="/NEIGHSHOP_BROCHURE.pdf">      
+                    <li class="dnl">
+                    <div class="tt">
+                    Download Brochure
+                </div><div class="ico" >
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15.248q-.161 0-.298-.053t-.267-.184l-2.62-2.619q-.146-.146-.152-.344t.152-.363q.166-.166.357-.169q.192-.003.357.163L11.5 13.65V5.5q0-.213.143-.357T12 5t.357.143t.143.357v8.15l1.971-1.971q.146-.146.347-.153t.366.159q.16.165.163.354t-.162.353l-2.62 2.62q-.13.13-.267.183q-.136.053-.298.053M6.616 19q-.691 0-1.153-.462T5 17.384v-1.923q0-.213.143-.356t.357-.144t.357.144t.143.356v1.923q0 .231.192.424t.423.192h10.77q.23 0 .423-.192t.192-.424v-1.923q0-.213.143-.356t.357-.144t.357.144t.143.356v1.923q0 .691-.462 1.153T17.384 19z"/></svg>
+                   
+                </div>
+                
+            </li>
+                </a>
+
+            <style>
+                .dnl{
+                    background-color: transparent;border: 1px solid  black;border-radius: 10px;align-items: center;display: flex;justify-content: center;transition: all 0.4s ease;
+
+                }
+                .dnl:hover{
+                    background-color: #959595;
+                    color: white;
+                    border: 1px solid white;
+                }
+
+                .cau{
+                    background-color: black;color: white;border-radius: 10px;
+                }
+
+                .cau:hover{
+                    background-color: #959595;
+                    color: white;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: inherit;
+                }
+
+            </style>
+            
+            
+         <a href="https://wa.me/+918307802643">   <li  class="cau" >
+                <div class="tt">
+                Call us  Now
+            </div><div class="ico">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"/></svg>
+
+            </div>
+            
+        </li></a>
+        
+        </div>
+        
+   
+
+
+        
+        
+      
+
+        <!-- <div class="slit" style="padding: 1em;background-color: black;">
+
+            <ul style="display: flex;width: max-content;;text-wrap: no-wrap;gap: 3em;background-color: black;color: white;list-style: disc;font-family: 'Poppins';">
+                <li>Digital Marketing</li>
+                <li>Website Development</li>
+                <li>Graphic Designing </li>
+                <li>Video Editing </li>
+                <li>App Development </li>
+                <li>Software Development</li>
+                <li>AI Consulting </li>
+
+
+
+
+            </ul>
+
+        </div> -->
+
+    </div>
+
+
+  
+
+    
+
+
+
+  
+
+    <div id="body1" >
+
+
+    <div style="transform: translateY(-100px);" id="model-container" tabindex="-1">
+        <div class="imgholder" style="display: flex; justify-content: center; align-items: center;">
+            <div class="imgg">
+                <img id="loading-image" src="loader.png" alt="Loading animation for 3D model" >
+            </div>
+
+            <style>
+                .imgg img{
+                    width: 100%;
+                }
+                .imgg img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+                @media screen  and (max-width: 700px){
+                    .imgg img{
+                    
+                        transform: scale(1.75);
+                }
+                    
+                }
+
+
+
+            </style>
+
+            
+        </div>
+    </div>
+
+</div>
+
+
+    <script>
+        // Get the container for the 3D scene
+        const container = document.getElementById('model-container');
+
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setClearColor(0x000000, 0); // Transparent background
+        container.appendChild(renderer.domElement);
+
+        // Add lighting to the scene
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+        scene.add(ambientLight);
+
+        // Set a timeout to simulate the delay of 5 seconds
+        setTimeout(() => {
+            // Load the GLB model after 5 seconds
+            const loader = new THREE.GLTFLoader();
+            loader.load(
+                'model.glb', // Replace with the correct path to your .glb file
+                function (gltf) {
+                    const model = gltf.scene;
+                    scene.add(model);
+
+                    // Hide the loading image once the model is loaded
+                    document.getElementById('loading-image').style.display = 'none';
+
+                    // Fit the model to the container
+                    const box = new THREE.Box3().setFromObject(model);
+                    const size = box.getSize(new THREE.Vector3());
+                    const maxDimension = Math.max(size.x, size.y, size.z);
+                    const scaleFactor = 1 / maxDimension; // Normalize the size to fit in a unit cube
+                    const userScaleFactor = 1.78; // Adjust this value for desired scaling
+                    const finalScale = scaleFactor * userScaleFactor;
+
+                    // Apply scaling
+                    model.scale.set(finalScale, finalScale, finalScale);
+
+                    // Center the model
+                    const center = box.getCenter(new THREE.Vector3());
+                    model.position.set(-center.x * finalScale, -center.y * finalScale, -center.z * finalScale);
+
+                    // Optional: Rotate the model slowly
+                    function animate() {
+                        requestAnimationFrame(animate);
+
+                        // Rotate the model on its Y-axis
+                        model.rotation.y += 0.01;
+
+                        renderer.render(scene, camera);
+                    }
+                    animate();
+                },
+                undefined,
+                function (error) {
+                    console.error('Error loading the model:', error);
+                }
+            );
+        }, 500); // Delay of 5 seconds (5000 ms)
+
+        // Set the camera position
+        camera.position.z = 2;
+
+        // Handle resizing to keep the aspect ratio correct
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+    </script>
+</body>
+</html>
