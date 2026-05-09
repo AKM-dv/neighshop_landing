@@ -1,1098 +1,1053 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Create a customizable website with Neighshop – the easiest way to build your online presence. Get started with a free 1-month trial today!">
-    <meta name="keywords" content="custom website builder, website creation, free website trial, no-code website builder, Neighshop">
-    <meta name="author" content="Neighshop">
-    <meta name='impact-site-verification' value='66b8592f-07de-4983-a31f-a4662b4aa22c'>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <meta property="og:title" content="Create Your Custom Website @199/mo with Neighshop">
-    <meta property="og:description" content="Start building your customized website with Neighshop. No coding skills required. Get your 1-month free trial and unlock premium features today.">
-    <meta property="og:image" content="/static/hero.webp">
-    <meta property="og:url" content="https://neighshop.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Create Your Custom Website with Neighshop">
-    <meta name="twitter:description" content="Create your dream website with Neighshop. No coding needed. Sign up for a free trial and start building today!">
-    <meta name="twitter:image" content="https://example.com/your-image.jpg">
-    <link rel="canonical" href="https://neighshop.com">
-    <link rel="icon" href="/static/logo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <title>Create Your Custom Website with Neighshop – 1-Month Free Trial</title>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Create Your Custom Website with Neighshop",
-            "description": "Build a website with Neighshop's easy-to-use platform. Sign up for your free trial today.",
-            "url": "https://neighshop.com"
-        }
-    </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neighshop Global — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Clash+Display:wght@300;400;600;700&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f5f0;
+    --gray-100: #e8e8e4;
+    --gray-200: #c8c8c2;
+    --gray-400: #888882;
+    --gray-600: #444440;
+    --gray-800: #1e1e1c;
+    --accent: #f0f0ec;
+    --border: rgba(255,255,255,0.08);
+    --border-dark: rgba(0,0,0,0.12);
+  }
 
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    width: 12px; height: 12px;
+    background: var(--white);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, opacity 0.2s;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(245,245,240,0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.2s;
+    transform: translate(-50%, -50%);
+  }
+  a:hover ~ .cursor, button:hover ~ .cursor { transform: translate(-50%,-50%) scale(2); }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 4rem;
+    border-bottom: 0.5px solid var(--border);
+    backdrop-filter: blur(12px);
+    background: rgba(10,10,10,0.7);
+    animation: slideDown 0.8s ease forwards;
+  }
+  @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gray-400); }
+
+  .nav-links { display: flex; gap: 2.5rem; }
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 4rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+    border: none;
+    /* Scale iframe to cover like object-fit: cover */
+    min-width: 100%;
+    min-height: 100%;
+    width: 177.78vh; /* 16:9 aspect */
+    height: 56.25vw; /* 16:9 aspect */
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--black);
+    opacity: 0.55;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero > *:not(.hero-video):not(.hero-video-overlay) {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(8rem, 18vw, 22rem);
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 0.5px rgba(255,255,255,0.04);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    animation: bgPulse 8s ease-in-out infinite;
+  }
+  @keyframes bgPulse {
+    0%, 100% { -webkit-text-stroke-color: rgba(255,255,255,0.04); }
+    50% { -webkit-text-stroke-color: rgba(255,255,255,0.07); }
+  }
+
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s ease forwards;
+  }
+
+  .hero-headline {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.6s ease forwards;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gray-200);
+  }
+
+  .hero-bottom {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.9s ease forwards;
+  }
+  .hero-desc {
+    max-width: 380px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--gray-400);
+  }
+  .hero-stats {
+    display: flex; gap: 3rem;
+    text-align: right;
+  }
+  .stat-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    animation: bounce 2s ease-in-out infinite;
+    opacity: 0;
+    animation: fadeIn 1s 1.5s forwards, bounce 2s 2.5s ease-in-out infinite;
+  }
+  .scroll-indicator::after {
+    content: '';
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gray-600), transparent);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ─── SECTION BASE ─── */
+  section { position: relative; z-index: 1; }
+
+  .section-header {
+    display: flex; align-items: baseline; gap: 1.5rem;
+    margin-bottom: 4rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .section-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gray-600);
+    letter-spacing: 0.1em;
+  }
+  .section-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+  .section-line { flex: 1; height: 0.5px; background: var(--border); }
+
+  /* ─── MARQUEE ─── */
+  .marquee-wrap {
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    padding: 1.2rem 0;
+    overflow: hidden;
+    background: var(--gray-800);
+  }
+  .marquee-track {
+    display: flex; gap: 4rem;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    white-space: nowrap;
+  }
+  .marquee-item::before { content: '◆ '; color: var(--gray-600); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ─── PORTFOLIO GRID ─── */
+  .portfolio {
+    padding: 8rem 4rem;
+  }
+
+  .category-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .category-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 1px;
+  }
+
+  .project-card {
+    background: var(--black);
+    padding: 2rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: block;
+    cursor: none;
+  }
+  .project-card:hover { background: var(--gray-800); }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0.5px;
+    background: var(--white);
+    transition: width 0.4s ease;
+  }
+  .project-card:hover::before { width: 100%; }
+
+  .project-index {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .project-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  .project-domain {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    margin-bottom: 1.5rem;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .project-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    border: 0.5px solid var(--border);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  .project-arrow {
+    position: absolute;
+    bottom: 1.5rem; right: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .project-card:hover .project-arrow {
+    transform: translate(3px, -3px);
+    color: var(--white);
+  }
+
+  /* Featured card */
+  .project-card.featured {
+    grid-column: span 2;
+    padding: 3rem;
+  }
+  .project-card.featured .project-name {
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+  .project-card.featured .featured-badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--white);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ─── ABOUT ─── */
+  .about {
+    padding: 8rem 4rem;
+    border-top: 0.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-left .big-letter {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(6rem, 14vw, 14rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.15);
+  }
+
+  .about-right {}
+  .about-tagline {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  .about-tagline strong { font-weight: 700; }
+  .about-body {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: var(--gray-400);
+    max-width: 480px;
+  }
+
+  /* ─── CAPABILITIES ─── */
+  .capabilities {
+    padding: 8rem 4rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .caps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+  .cap-item {
+    background: var(--black);
+    padding: 2.5rem 1.5rem;
+    transition: background 0.3s;
+  }
+  .cap-item:hover { background: var(--gray-800); }
+  .cap-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .cap-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .cap-desc {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--gray-400);
+  }
+
+  /* ─── ONGOING ─── */
+  .ongoing-section {
+    padding: 8rem 4rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .ongoing-card {
+    background: var(--white);
+    color: var(--black);
+    padding: 3rem 3.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    cursor: none;
+  }
+  .ongoing-card:hover { transform: scale(1.008); }
+  .ongoing-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 0.8rem;
+  }
+  .ongoing-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--black);
+  }
+  .ongoing-domain {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    margin-top: 0.5rem;
+  }
+  .ongoing-arrow-wrap {
+    width: 56px; height: 56px;
+    border: 1px solid var(--gray-200);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    color: var(--black);
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .ongoing-card:hover .ongoing-arrow-wrap {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 4rem;
+    border-top: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+  }
+  .footer-copy {
+    font-size: 0.72rem;
+    color: var(--gray-600);
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 0 1.5rem 4rem; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 2rem; }
+    .hero-stats { text-align: left; }
+    .portfolio { padding: 5rem 1.5rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; }
+    .about { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 2rem; }
+    .caps-grid { grid-template-columns: 1fr 1fr; }
+    .capabilities { padding: 5rem 1.5rem; }
+    .ongoing-section { padding: 5rem 1.5rem; }
+    .ongoing-card { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; }
+  }
+</style>
 </head>
+<body>
 
-<body style="background-color: #F3E6F7;">
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
-    <style>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Neighshop <span>Global</span></a>
+  <div class="nav-links">
+    <a href="#portfolio">Work</a>
+    <a href="#about">About</a>
+    <a href="#capabilities">Services</a>
+    <a href="#ongoing">Ongoing</a>
+  </div>
+</nav>
 
-        body {
-            cursor: url('/static/cursor.png'), auto;
-        }
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        html{
-            scroll-behavior: smooth;
-        }
-        @font-face {
-            font-family: 'sfpro';
-            src: 
-                 url('/static/fonts/sfpro.OTF') format('truetype');
-          
-        }
-    </style>
+<!-- HERO -->
+<section class="hero">
+  <iframe
+    class="hero-video"
+    src="https://customer-fbqjt85b2dmsrm9s.cloudflarestream.com/d23081da8d99f300a457579a87f24af7/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    frameborder="0"
+    title="Background video"
+  ></iframe>
+  <div class="hero-video-overlay"></div>
+  <div class="hero-bg-text">NSG</div>
+  <div class="hero-tag">Neighshop Global — Digital Studio</div>
+  <h1 class="hero-headline">
+    We build<br />
+    <em>products</em><br />
+    that matter.
+  </h1>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      From healthcare to logistics, e-commerce to edtech — we craft end-to-end digital experiences across every industry that shapes modern life.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-num">30+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div>
+        <span class="stat-num">12+</span>
+        <span class="stat-label">Industries</span>
+      </div>
+      <div>
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Ambition</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">Scroll</div>
+</section>
 
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Healthcare</span>
+    <span class="marquee-item">Logistics</span>
+    <span class="marquee-item">E-Commerce</span>
+    <span class="marquee-item">Home Services</span>
+    <span class="marquee-item">Pet Care</span>
+    <span class="marquee-item">Mobility</span>
+    <span class="marquee-item">Recruitment</span>
+    <span class="marquee-item">Diagnostics</span>
+    <span class="marquee-item">Event Tech</span>
+    <span class="marquee-item">Finance</span>
+    <span class="marquee-item">Education</span>
+    <span class="marquee-item">Legal Tech</span>
+    <span class="marquee-item">Matrimony</span>
+    <span class="marquee-item">Fashion</span>
+    <span class="marquee-item">Healthcare</span>
+    <span class="marquee-item">Logistics</span>
+    <span class="marquee-item">E-Commerce</span>
+    <span class="marquee-item">Home Services</span>
+    <span class="marquee-item">Pet Care</span>
+    <span class="marquee-item">Mobility</span>
+    <span class="marquee-item">Recruitment</span>
+    <span class="marquee-item">Diagnostics</span>
+    <span class="marquee-item">Event Tech</span>
+    <span class="marquee-item">Finance</span>
+    <span class="marquee-item">Education</span>
+    <span class="marquee-item">Legal Tech</span>
+    <span class="marquee-item">Matrimony</span>
+    <span class="marquee-item">Fashion</span>
+  </div>
+</div>
 
-    <header>
-
-        <nav style="display: flex;justify-content: center;padding-top: 1em;">
-            <ul style="list-style: none;display: flex;justify-content: space-between;gap: 1em;padding: 1em;width: 100%;min-width: 300px;;max-width: 900px;align-items: center;">
-                <li><img src="/static/logimg.png" alt="" width="175px"></li>
-                <li>
-                    <button style="color: #5D3F6A;background-color: #5d3f6a23;font-family: 'Poppins';font-weight: 400;padding:0.75em 1.75em;border-radius: 50px;font-size: 0.85rem;border: #5D3F6A 1px solid;" onclick="window.location.href = 'https://wa.me/+918307802643'">Contact us</button>
-                </li>
-            </ul>
-        </nav>
-
-    
-
-    
-
-    </header>
-
-    <div id="main" >
-
-        <div class="texcontainer" style="display: flex;justify-content: center;align-items: center;width: 100%;margin-top: 4em;">
-
-
-            <div class="container" style="max-width: 700px;font-size: 2rem;">
-
-                <h1 data-aos="fade-down" data-aos-duration="1000" style="justify-content: center;text-align: center;font-family: 'sfpro';color: rgb(40, 40, 40);">Build Your Customizable
-                    <p> Website in Minutes  🚀💻                    </p> </h1>
-
-                    <h2       data-aos="fade-up" data-aos-duration="1000"   style="justify-content: center;text-align: center;font-family: 'sfpro';color: rgb(40, 40, 40);padding: 1em;color: gray;">Build Create a stunning, fully customizable website <br> for your business — no coding required. 
-                        
-  <div class="op" style="display: flex;justify-content: center;margin-top: 1.35em;">
-    <button style="background-color: #5D3F6A;color: white;font-family: 'Poppins';font-weight: 400;padding:0.75em 1.75em;border-radius: 50px;font-size: 1rem;" onclick="window.location.href='https://forms.gle/9f37iWhct1rWea829'">Create Now</button>
-
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <span class="section-title">Selected Work</span>
+    <div class="section-line"></div>
   </div>
 
-  <div class="info" style="margin-top: 0.75em;font-size: 0.8rem;color: rgb(58, 58, 58);;">
-    Start for free. No Credit Card Required
+  <!-- Healthcare -->
+  <div class="category-label reveal">Healthcare & Medical</div>
+  <div class="projects-grid reveal">
+    <a href="https://knyamed.com/" target="_blank" class="project-card featured">
+      <span class="featured-badge">Featured</span>
+      <span class="project-index">001</span>
+      <div class="project-name">Knya Med</div>
+      <div class="project-domain">knyamed.com</div>
+      <div class="project-tag">Medical Apparel</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.maxlab.co.in/" target="_blank" class="project-card">
+      <span class="project-index">002</span>
+      <div class="project-name">MaxLab</div>
+      <div class="project-domain">maxlab.co.in</div>
+      <div class="project-tag">Diagnostics</div>
+      <span class="project-arrow">↗</span>
+    </a>
   </div>
-            </div>
 
-            <style>
-                @media screen and (max-width: 750px) {
-                    h1{
-                        font-size: 2rem;
-                        
-                    }
-                    h2{
-                        font-size: 0.9rem;
-                    }
-                    
-                }
-                @media screen and (min-width: 750px) {
-                    h1{
-                        font-size: 3rem;
-                    }
-                    h2{
-                        font-size: 1.25rem;
-                    }
-                    
-                    
-                }
-            </style>
+  <!-- Logistics -->
+  <div class="category-label reveal" style="margin-top:1px;">Logistics & Supply Chain</div>
+  <div class="projects-grid reveal">
+    <a href="https://www.loadnow.io/" target="_blank" class="project-card">
+      <span class="project-index">003</span>
+      <div class="project-name">LoadNow</div>
+      <div class="project-domain">loadnow.io</div>
+      <div class="project-tag">Freight Tech</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.gopuff.com/gb/" target="_blank" class="project-card">
+      <span class="project-index">004</span>
+      <div class="project-name">GoPuff GB</div>
+      <div class="project-domain">gopuff.com/gb</div>
+      <div class="project-tag">Instant Delivery</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.redtaxi.co.in/" target="_blank" class="project-card">
+      <span class="project-index">005</span>
+      <div class="project-name">Red Taxi</div>
+      <div class="project-domain">redtaxi.co.in</div>
+      <div class="project-tag">Mobility</div>
+      <span class="project-arrow">↗</span>
+    </a>
+  </div>
 
-        </div>
+  <!-- E-Commerce -->
+  <div class="category-label reveal" style="margin-top:1px;">E-Commerce & Retail</div>
+  <div class="projects-grid reveal">
+    <a href="https://row.gymshark.com/" target="_blank" class="project-card featured">
+      <span class="featured-badge">Featured</span>
+      <span class="project-index">006</span>
+      <div class="project-name">Gymshark</div>
+      <div class="project-domain">row.gymshark.com</div>
+      <div class="project-tag">Fitness Apparel</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.coutloot.com/" target="_blank" class="project-card">
+      <span class="project-index">007</span>
+      <div class="project-name">CoutLoot</div>
+      <div class="project-domain">coutloot.com</div>
+      <div class="project-tag">Fashion Commerce</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://sardarfashions.in/" target="_blank" class="project-card">
+      <span class="project-index">008</span>
+      <div class="project-name">Sardar Fashions</div>
+      <div class="project-domain">sardarfashions.in</div>
+      <div class="project-tag">Fashion Retail</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://broomees.com" target="_blank" class="project-card">
+      <span class="project-index">009</span>
+      <div class="project-name">Broomees</div>
+      <div class="project-domain">broomees.com</div>
+      <div class="project-tag">Home Commerce</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://starfusion.in/" target="_blank" class="project-card">
+      <span class="project-index">010</span>
+      <div class="project-name">Star Fusion</div>
+      <div class="project-domain">starfusion.in</div>
+      <div class="project-tag">Retail</div>
+      <span class="project-arrow">↗</span>
+    </a>
+  </div>
 
+  <!-- Home Services -->
+  <div class="category-label reveal" style="margin-top:1px;">Home Services</div>
+  <div class="projects-grid reveal">
+    <a href="https://www.taskrabbit.com/" target="_blank" class="project-card featured">
+      <span class="featured-badge">Featured</span>
+      <span class="project-index">011</span>
+      <div class="project-name">TaskRabbit</div>
+      <div class="project-domain">taskrabbit.com</div>
+      <div class="project-tag">On-Demand Services</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://knockman.in/" target="_blank" class="project-card">
+      <span class="project-index">012</span>
+      <div class="project-name">Knockman</div>
+      <div class="project-domain">knockman.in</div>
+      <div class="project-tag">Home Services</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://homiq24.com/" target="_blank" class="project-card">
+      <span class="project-index">013</span>
+      <div class="project-name">Homiq24</div>
+      <div class="project-domain">homiq24.com</div>
+      <div class="project-tag">Smart Home</div>
+      <span class="project-arrow">↗</span>
+    </a>
+  </div>
 
-        
-        <div class="imgcontainer" style="display: flex;justify-content: center;margin-top: 2em;margin-bottom: 5em;">
-            <div class="imgholder" data-aos-duration="1000" style="margin: 1em;max-width: 750px;" data-aos="zoom-in">
-                <img src="/static/hero.webp" alt="" width="100%">
-            </div>
+  <!-- Pet Care -->
+  <div class="category-label reveal" style="margin-top:1px;">Pet Care</div>
+  <div class="projects-grid reveal">
+    <a href="https://thepetnest.com/" target="_blank" class="project-card">
+      <span class="project-index">014</span>
+      <div class="project-name">The Pet Nest</div>
+      <div class="project-domain">thepetnest.com</div>
+      <div class="project-tag">Pet Services</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://sploot.space/" target="_blank" class="project-card">
+      <span class="project-index">015</span>
+      <div class="project-name">Sploot</div>
+      <div class="project-domain">sploot.space</div>
+      <div class="project-tag">Pet Tech</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://hoora.in/" target="_blank" class="project-card">
+      <span class="project-index">016</span>
+      <div class="project-name">Hoora</div>
+      <div class="project-domain">hoora.in</div>
+      <div class="project-tag">Pet Platform</div>
+      <span class="project-arrow">↗</span>
+    </a>
+  </div>
 
-        </div>
-      
+  <!-- Other Industries -->
+  <div class="category-label reveal" style="margin-top:1px;">Recruitment, Events & More</div>
+  <div class="projects-grid reveal">
+    <a href="https://www.reed.co.uk/" target="_blank" class="project-card featured">
+      <span class="featured-badge">Featured</span>
+      <span class="project-index">017</span>
+      <div class="project-name">Reed</div>
+      <div class="project-domain">reed.co.uk</div>
+      <div class="project-tag">Recruitment</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.nymph.so/" target="_blank" class="project-card">
+      <span class="project-index">018</span>
+      <div class="project-name">Nymph</div>
+      <div class="project-domain">nymph.so</div>
+      <div class="project-tag">Event Tech</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.theknot.com/" target="_blank" class="project-card">
+      <span class="project-index">019</span>
+      <div class="project-name">The Knot</div>
+      <div class="project-domain">theknot.com</div>
+      <div class="project-tag">Wedding Tech</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.enago.com/" target="_blank" class="project-card">
+      <span class="project-index">020</span>
+      <div class="project-name">Enago</div>
+      <div class="project-domain">enago.com</div>
+      <div class="project-tag">Academic Editing</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.waveapps.com/" target="_blank" class="project-card">
+      <span class="project-index">021</span>
+      <div class="project-name">Wave Apps</div>
+      <div class="project-domain">waveapps.com</div>
+      <div class="project-tag">Finance SaaS</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.iymbulan.com/" target="_blank" class="project-card">
+      <span class="project-index">022</span>
+      <div class="project-name">Iymbulan</div>
+      <div class="project-domain">iymbulan.com</div>
+      <div class="project-tag">Platform</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://www.urbanmatch.in/" target="_blank" class="project-card">
+      <span class="project-index">023</span>
+      <div class="project-name">Urban Match</div>
+      <div class="project-domain">urbanmatch.in</div>
+      <div class="project-tag">Matrimony</div>
+      <span class="project-arrow">↗</span>
+    </a>
+  </div>
 
+  <!-- Edtech -->
+  <div class="category-label reveal" style="margin-top:1px;">Education & Legal Tech</div>
+  <div class="projects-grid reveal">
+    <a href="https://www.edmingle.com/" target="_blank" class="project-card">
+      <span class="project-index">024</span>
+      <div class="project-name">Edmingle</div>
+      <div class="project-domain">edmingle.com</div>
+      <div class="project-tag">EdTech</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://school.playablo.com/" target="_blank" class="project-card">
+      <span class="project-index">025</span>
+      <div class="project-name">Playablo School</div>
+      <div class="project-domain">school.playablo.com</div>
+      <div class="project-tag">EdTech</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://nyayguru.com/" target="_blank" class="project-card">
+      <span class="project-index">026</span>
+      <div class="project-name">NyayGuru</div>
+      <div class="project-domain">nyayguru.com</div>
+      <div class="project-tag">Legal Tech</div>
+      <span class="project-arrow">↗</span>
+    </a>
+    <a href="https://rudradhan.com/" target="_blank" class="project-card">
+      <span class="project-index">027</span>
+      <div class="project-name">Rudradhan</div>
+      <div class="project-domain">rudradhan.com</div>
+      <div class="project-tag">Platform</div>
+      <span class="project-arrow">↗</span>
+    </a>
+  </div>
+
+</section>
+
+<!-- ONGOING -->
+<section class="ongoing-section" id="ongoing">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <span class="section-title">Currently Building</span>
+    <div class="section-line"></div>
+  </div>
+  <a href="https://finxpert.neighshopglobal.com/#/home" target="_blank" class="ongoing-card reveal">
+    <div>
+      <div class="ongoing-label">Ongoing · In Development</div>
+      <div class="ongoing-name">FinXpert</div>
+      <div class="ongoing-domain">finxpert.neighshopglobal.com</div>
     </div>
+    <div class="ongoing-arrow-wrap">↗</div>
+  </a>
+</section>
 
-    <div id="sec2" style="margin-top: 2em;">
-
-        <div class="texcontainer" style="display: flex;justify-content: center;align-items: center;width: 100%;margin-top: 4em;">
-
-
-            <div class="container" style="max-width: 700px;font-size: 2rem;">
-
-                <h1  data-aos-duration="1000" style="justify-content: center;text-align: center;font-family: 'sfpro';color: rgb(40, 40, 40);">Why Choose us? 🤔✨</h1>
-
-                    <div id="reasli" style="font-size: 1rem;margin-top: 2em;">
-
-                        <style>
-                            #reasli ul li{
-                                max-width: 350px;
-                                text-wrap: wrap;
-                                font-weight: 500;
-                              
-                            }
-                        </style>
-
-                        <ul style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center;">
-
-
-                            <li style="display: flex;justify-content: left;flex-direction: column;text-align: left;padding: 1em;border-radius: 15px;padding-top: 2em;padding-bottom: 1em;">
-                                <div class="icon" style="padding: 0.5em;border-radius: 50%;background-color: #5d3f6ac6;color: white;width: max-content;">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.53 16.122a3 3 0 0 0-5.78 1.128a2.25 2.25 0 0 1-2.4 2.245a4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128m0 0a16 16 0 0 0 3.388-1.62m-5.043-.025a16 16 0 0 1 1.622-3.395m3.42 3.42a16 16 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a16 16 0 0 0-4.649 4.764m3.42 3.42a6.78 6.78 0 0 0-3.42-3.42"/></svg>
-
-                               
-                                </div>
-                                <div class="txt" style="font-size: 1.25rem;color: black;margin-top: 1em;">
-                                    Real-Time Customization:
-                                </div>
-                                <div class="cap" style="margin-top: 0.15em;color: rgba(35, 35, 35, 0.827);"> Adjust themes, colors, and layouts instantly with ease.</div>
-                            </li>
-
-                            <li style="display: flex;justify-content: left;flex-direction: column;text-align: left;padding: 1em;border-radius: 15px;padding-top: 1em;padding-bottom: 1em;">
-                                <div class="icon" style="padding: 0.5em;border-radius: 50%;background-color: #5d3f6ac6;color: white;width: max-content;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 22h4v-4H2zM22 2L12 12m10-2V2h-8m8 11h-4v9h4zm-12 9h4v-6h-4z"/></svg>
-                               
-                                </div>
-                                <div class="txt" style="font-size: 1.25rem;color: black;margin-top: 1em;">
-                                    SEO Optimization
-                                </div>
-                                <div class="cap" style="margin-top: 0.15em;color: rgba(35, 35, 35, 0.827);"> Boost site's rankings with integrated SEO tools.</div>
-                            </li>
-
-                            <li style="display: flex;justify-content: left;flex-direction: column;text-align: left;padding: 1em;border-radius: 15px;padding-top: 1em;padding-bottom: 1em;">
-                                <div class="icon" style="padding: 0.5em;border-radius: 50%;background-color: #5d3f6ac6;color: white;width: max-content;">
-
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12.5 12.75l4.789-3.25L12.5 6.25zm4.383 5.712h1.444l.098.825l-13.84 1.742L2.927 8.065l2.612-.254v1L4.1 8.956L5.45 19.9zm-9.344-2V3H21v13.462zm1-1H20V4H8.539zm5.73-5.731"/></svg>
-                               
-                                </div>
-                                <div class="txt" style="font-size: 1.25rem;color: black;margin-top: 1em;">
-                                    Portfolio Support
-                                </div>
-                                <div class="cap" style="margin-top: 0.15em;color: rgba(35, 35, 35, 0.827);">  Display up to 100 images to showcase your work.</div>
-                            </li>
-
-
-                            <li style="display: flex;justify-content: left;flex-direction: column;text-align: left;padding: 1em;border-radius: 15px;padding-top: 1em;padding-bottom: 1em;">
-                                <div class="icon" style="padding: 0.5em;border-radius: 50%;background-color: #5d3f6ac6;color: white;width: max-content;">
-
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32"><path fill="currentColor" d="M4 24h10v2H4zm0-6h10v2H4zm22-4H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2M6 6v6h20V6zm20 22h-6a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2m-6-8v6h6v-6z"/></svg>
-
-                                </div>
-                                <div class="txt" style="font-size: 1.25rem;color: black;margin-top: 1em;">
-                                    Blogging Capabilities
-                                </div>
-                                <div class="cap" style="margin-top: 0.15em;color: rgba(35, 35, 35, 0.827);"> Post  content through  blogs daily  to engage your audience.</div>
-                            </li>
-
-
-                            <li style="display: flex;justify-content: left;flex-direction: column;text-align: left;padding: 1em;border-radius: 15px;padding-top: 1em;padding-bottom: 1em;">
-                                <div class="icon" style="padding: 0.5em;border-radius: 50%;background-color: #5d3f6ac6;color: white;width: max-content;">
-
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M10.232 10.231a5 5 0 0 1 6.89-.172l.181.172l2.828 2.829a5 5 0 0 1-6.89 7.243l-.18-.172l-2.122-2.122a1 1 0 0 1 1.32-1.497l.094.083l2.122 2.122a3 3 0 0 0 4.377-4.1l-.135-.143l-2.828-2.828a3 3 0 0 0-4.243 0a1 1 0 0 1-1.414-1.415M3.868 3.867a5 5 0 0 1 6.89-.172l.181.172L13.06 5.99a1 1 0 0 1-1.32 1.497l-.094-.083l-2.121-2.121A3 3 0 0 0 5.147 9.38l.135.144l2.829 2.829a3 3 0 0 0 4.242 0a1 1 0 1 1 1.415 1.414a5 5 0 0 1-6.89.172l-.182-.172l-2.828-2.829a5 5 0 0 1 0-7.07Z"/></g></svg>
-
-                                </div>
-                                <div class="txt" style="font-size: 1.25rem;color: black;margin-top: 1em;">
-                                    Domain Integration
-                                </div>
-                                <div class="cap" style="margin-top: 0.15em;color: rgba(35, 35, 35, 0.827);">  Connect your own domain for a professional look and  full access</div>
-                            </li>
-                            
-
-                            <li style="display: flex;justify-content: left;flex-direction: column;text-align: left;padding: 1em;border-radius: 15px;padding-top: 1em;padding-bottom: 1em;">
-                                <div class="icon" style="padding: 0.5em;border-radius: 50%;background-color: #5d3f6ac6;color: white;width: max-content;">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M20 7c1.25 1.67 2 3.75 2 6c0 5.52-4.48 10-10 10S2 18.52 2 13S6.48 3 12 3m0-2v12l9.6-7.2C19.41 2.89 15.92 1 12 1Z"/></svg>
-
-                                </div>
-                                <div class="txt" style="font-size: 1.25rem;color: black;margin-top: 1em;">
-                                    Dynamic Analytics
-                                </div>
-                                <div class="cap" style="margin-top: 0.15em;color: rgba(35, 35, 35, 0.827);">  Track performance and insights with our user-friendly dashboard.</div>
-                            </li>
-
-                            
-
-
-                          
-                       
-
-                        </ul>
-
-
-                        <!-- <ul>
-                            <li><strong>Real-Time Customization:</strong> Adjust themes, colors, and layouts instantly.</li>
-                            <li><strong>SEO Optimization:</strong> Boost your site’s rankings with integrated SEO tools.</li>
-                            <li><strong>Portfolio Support:</strong> Display up to 100 images to showcase your work.</li>
-                            <li><strong>Blogging Capabilities:</strong> Post up to 5 blogs weekly to engage your audience.</li>
-                            <li><strong>Domain Integration:</strong> Connect your own domain for a professional look.</li>
-                            <li><strong>Dynamic Analytics:</strong> Track performance and insights with our user-friendly dashboard.</li> -->
-                        </ul>
-                        </ul>
-
-                    </div>
-                    
-
-                </div>
-
-
-
-                
-
-  
-          
-
-          
-
-        </div>
-
-
-
-
-       
-
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-left reveal">
+    <div class="big-letter">NG</div>
+  </div>
+  <div class="about-right">
+    <div class="section-header reveal" style="margin-bottom:2.5rem;">
+      <span class="section-num">03</span>
+      <span class="section-title">About</span>
+      <div class="section-line"></div>
     </div>
+    <h2 class="about-tagline reveal">
+      Building the <strong>digital backbone</strong> of tomorrow's industries.
+    </h2>
+    <p class="about-body reveal">
+      Neighshop Global is a full-stack product studio that partners with startups and enterprises to design, develop, and launch digital platforms. We move fast without compromising craft — because the best products are both well-engineered and beautifully considered.
+    </p>
+  </div>
+</section>
 
-
-    <div id="sec3" style="margin-top: 2em;">
-
-        <div class="texcontainer" style="display: flex;justify-content: center;align-items: center;width: 100%;margin-top: 4em;">
-
-
-            <div class="container" style="max-width: 900px;font-size: 2rem;">
-
-                <h1  data-aos-duration="1000" style="justify-content: center;text-align: center;font-family: 'sfpro';color: rgb(40, 40, 40);margin-bottom: 1em;">How it Works ? 🔧📈</h1>
-
-
-                <ul class="how" style="display: flex;align-items: center;flex-wrap: wrap;justify-content: center;">  
-                    <style>
-                        .how  li{
-                            font-size: 1rem;
-                            border: 1px solid #5D3F6A;
-                            padding: 1em 1.35em;
-                            margin: 0.5em;
-                            border-radius: 10px;
-                            max-width: 250px;
-                            color: white;
-                            background-color: #5D3F6A;
-
-                        }
-                        .how  li .title{
-                            font-weight: 500;
-                            margin-top: 0.5em;
-                            margin-bottom: 0.5em;
-
-                         
-                        }
-
-                        .how  li .descrip{
-                            font-family: 'poppins';
-                            font-weight: 200;
-                            font-size: 0.9rem;
-                          
-
-                         
-                        }
-
-
-                        .how  li svg{
-                            border:  1px solid white;
-                            border-radius: 50%;
-                            padding: 0.5em;
-                        }
-                    </style>
-                    <li>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24"><path fill="currentColor" d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5v2H5v14h14v-5z"/><path fill="currentColor" d="M21 7h-4V3h-2v4h-4v2h4v4h2V9h4z"/></svg>
-
-                        </div>
-                        <div class="title">
-                            Create Account
-
-                        </div>
-                        <div class="descrip">
-                            Register free account and get immediate access to Neighshop.
-
-                        </div>
-                
-                    </li>
-
-                    <li>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 2048 2048"><path fill="currentColor" d="M226 701q-48-48-73-109t-25-128q0-71 26-131t71-105t107-70t131-26q66 0 128 23t110 71l353 353l-91 91l-195-195l-293 293l195 195l-91 91zm238-443q-43 0-81 15t-66 44t-44 65t-17 82q0 38 10 66t29 53t41 47t48 47l293-293q-26-25-47-48t-46-40t-52-28t-68-10m1584 1790l-633-158l-293-293l91-91l217 218q16-52 44-98t67-85t84-66t99-45l-218-217l91-91l293 293zm-176-176l-82-329q-47 10-87 32t-73 55t-55 73t-32 87zM1728 192q53 0 99 20t82 55t55 81t20 100q0 51-19 98t-56 83L763 1775q-9 59-37 108t-70 87t-95 57t-113 21H0v-128q11 0 23-3t22-9q25-13 41-33t25-44t13-50t4-53q0-59 20-112t58-96t86-70t109-37L1547 267q36-36 83-55t98-20M448 1920q40 0 75-15t61-41t41-61t15-75t-15-75t-41-61t-61-41t-75-15t-75 15t-61 41t-41 61t-15 75q0 104-64 192zm518-529q-32-63-75-106t-106-75l-221 221q62 24 109 71t72 110zm852-853q37-37 37-90q0-26-10-49t-27-40t-41-28t-49-10q-53 0-90 37l-759 758q61 36 103 78t78 103z"/></svg>
-                        </div>
-                        <div class="title">
-                            Customize
-
-                        </div>
-                        <div class="descrip">
-                           Use Different Themes and Customise Your site as you want!
-
-                        </div>
-                
-                    </li>
-
-                    
-                    <li>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24"><path fill="currentColor" d="M9.19 6.35c-2.04 2.29-3.44 5.58-3.57 5.89l-2.26-.97c-.65-.28-.81-1.13-.31-1.63l3.01-3.01c.47-.47 1.15-.68 1.81-.55zm1.49 10.16c.3.3.74.38 1.12.2c1.16-.54 3.65-1.81 5.26-3.42c4.59-4.59 4.63-8.33 4.36-9.93a.98.98 0 0 0-.79-.79c-1.6-.27-5.34-.23-9.93 4.36c-1.61 1.61-2.87 4.1-3.42 5.26c-.18.38-.09.83.2 1.12zm6.97-1.7c-2.29 2.04-5.58 3.44-5.89 3.57l.97 2.26c.28.65 1.13.81 1.63.31l3.01-3.01c.47-.47.68-1.15.55-1.81zm-8.71 2.6a3 3 0 0 1-.82 2.71c-.77.77-3.16 1.34-4.71 1.64c-.69.13-1.3-.48-1.17-1.17c.3-1.55.86-3.94 1.64-4.71a3 3 0 0 1 2.71-.82c1.17.22 2.13 1.18 2.35 2.35M13 9c0-1.1.9-2 2-2s2 .9 2 2s-.9 2-2 2s-2-.9-2-2"/></svg>
-                        </div>
-                        <div class="title">
-                            Publish
-
-                        </div>
-                        <div class="descrip">
-                            Launch your website in just a few clicks and start reaching your audience!
-                        </div>
-                
-                    </li>
-
-
-                </ul>
-
-
-
-                
-
-                </div>
-
-
-
-                
-
-  
-          
-
-          
-
-        </div>
-
-
-
-
-       
-
+<!-- CAPABILITIES -->
+<section class="capabilities" id="capabilities">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <span class="section-title">What We Do</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="caps-grid reveal">
+    <div class="cap-item">
+      <span class="cap-num">01</span>
+      <div class="cap-name">Product Design</div>
+      <p class="cap-desc">UX research, wireframes, prototypes, and design systems built to scale.</p>
     </div>
-
-
-
-
-
-
-    <div id="sec4" style="margin-top: 2em;padding-top: 2em  ;display: flex;justify-content: center;align-items: center;">
-
-        <div class="texcontainer" style="display: flex;justify-content: center;align-items: center;width: 100%;margin-top: 4em;">
-
-
-            <div class="container" style="max-width: 1200px;font-size: 2rem;">
-
-                <h1  data-aos-duration="1000" style="justify-content: center;text-align: center;font-family: 'sfpro';color: rgb(40, 40, 40);margin-bottom: 2em;">Explore our Pricing 💰📊</h1>
-
-
-                <ul class="pricing" style="display: flex;justify-content: center;gap: 1em;flex-wrap: wrap;">
-
-                    <li>
-                        <style>
-                            .pricing li{
-                                background-color: white;
-                                max-width: 300px;
-                                padding-top: 0em;
-                                font-size: 1.2rem;
-                                border-radius: 10px;
-                                font-family: 'sfpro';
-
-                            }
-                            .pricing li .time {
-                               font-size: 1.5rem;
-                               margin-bottom: 0.5em;
-                               color: white;
-                               letter-spacing: 0.05em;
-                               background-color:#9c51bcc8;
-                               border-radius: 10px 10px 0px 0px;padding: 1em;
-
-                            }
-
-                            .pricing li .price {
-                                font-size: 2rem;
-                                color: #5D3F6A;
-                                padding: 0.5em;
-                                padding-bottom: 0em;
-                                padding-left: 0.75em;
-
-                            }
-                            .pricing li .oppy {
-
-                                display: flex;
-                                margin-top: 0.5em;
-                                gap: 0.5em;
-                                font-size: 0.95rem;
-                                color: rgb(50, 50, 50);
-                                padding: 0em 0.5em;
-                                
-
-                            }
-
-                            .pricing li .cnt {
-                                padding: 0.5em;
-
-                            
-                            }
-                            .cnt svg{
-                                color: green;
-                            }
-                        </style>
-                        <div class="time" style="background-color:#9c51bcc8;">Monthly</div>
-                        <div class="price">₹299</div>
-
-                        <div class="cnt">
-
-
-
-                            <div class="oppy">
-                                <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                                <div class="det">Professional Blogging</div>
-
-                            </div>
-
-                            <div class="oppy">
-                                <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                                <div class="det">Image Portfolio (100 images)</div>
-                            </div> 
-                        
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">SEO Keyword Management</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Offer Bar & Custom Color Palette</div>
-                        </div>
-                        
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Custom Pages (FAQ, About, Contact, Portfolio)</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Free Domain Connection</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Social Media Calendar</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Social Media Integration</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Performance Analytics & Insights</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Email Notifications for User Messages</div>
-                        </div>
-
-                        </div>
-
-                        <div class="book" style="padding: 0.5em;text-align: center;background-color: white;border: 1px solid #5D3F6A;color: #5D3F6A;text-align: center;display: flex;justify-content: center;align-items: center;cursor: pointer;border-radius: 0px 0px 10px 10px;margin-top: 1em;"  onclick="window.location.href='https://forms.gle/9f37iWhct1rWea829'">
-                            Choose plan
-                        </div>
-
-                      
-
-
-
-
-
-
-
-
-
-                        
-
-                    </li>
-
-
-                    <li>
-                        <style>
-                            .pricing li{
-                                background-color: white;
-                                max-width: 300px;
-                                padding-top: 0em;
-                                font-size: 1.2rem;
-                                border-radius: 10px;
-                                height: max-content;
-                                font-family: 'sfpro';
-
-                            }
-                            .pricing li .time {
-                               font-size: 1.5rem;
-                               margin-bottom: 0.5em;
-                               color: white;
-                               letter-spacing: 0.05em;
-                               background-color:#9c51bcc8;
-                               border-radius: 10px 10px 0px 0px;padding: 1em;
-
-                            }
-
-                            .pricing li .price {
-                                font-size: 2rem;
-                                color: #5D3F6A;
-                                padding: 0.5em;
-                                padding-bottom: 0em;
-                                padding-left: 0.75em;
-
-                            }
-                            .pricing li .oppy {
-
-                                display: flex;
-                                margin-top: 0.5em;
-                                gap: 0.5em;
-                                font-size: 0.95rem;
-                                color: rgb(50, 50, 50);
-                                padding: 0em 0.5em;
-                                
-
-                            }
-
-                            .pricing li .cnt {
-                                padding: 0.5em;
-
-                            
-                            }
-                            .cnt svg{
-                                color: green;
-                            }
-                        </style>
-                        <div class="time">Annually</div>
-                        <div class="price">₹2999</div>
-
-                        <div class="cnt">
-
-
-
-                            <div class="oppy">
-                                <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                                <div class="det">Professional Blogging</div>
-
-                            </div>
-
-                            <div class="oppy">
-                                <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                                <div class="det">Image Portfolio (100 images)</div>
-                            </div> 
-                        
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">SEO Keyword Management</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Offer Bar & Custom Color Palette</div>
-                        </div>
-                        
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Custom Pages (FAQ, About, Contact, Portfolio)</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Free Domain Connection</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Social Media Calendar</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Social Media Integration</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Performance Analytics & Insights</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Email Notifications for User Messages</div>
-                        </div>
-
-                        </div>
-
-                        <div class="book" style="padding: 0.5em;text-align: center;background-color: white;border: 1px solid #5D3F6A;color: #5D3F6A;text-align: center;display: flex;justify-content: center;align-items: center;cursor: pointer;border-radius: 0px 0px 10px 10px;margin-top: 1em;"  onclick="window.location.href='https://forms.gle/9f37iWhct1rWea829'">
-                            Choose plan
-                        </div>
-
-                      
-
-
-
-
-
-
-
-
-
-                        
-
-                    </li>
-
-
-                    <li>
-                        <style>
-                            .pricing li{
-                                background-color: white;
-                                max-width: 300px;
-                                padding-top: 0em;
-                                font-size: 1.2rem;
-                                border-radius: 10px;
-                                font-family: 'sfpro';
-
-                            }
-                            .pricing li .time {
-                               font-size: 1.5rem;
-                               margin-bottom: 0.5em;
-                               color: white;
-                               letter-spacing: 0.05em;
-                               background-color:#9c51bcc8;
-                               border-radius: 10px 10px 0px 0px;padding: 1em;
-
-                            }
-
-                            .pricing li .price {
-                                font-size: 2rem;
-                                color: #5D3F6A;
-                                padding: 0.5em;
-                                padding-bottom: 0em;
-                                padding-left: 0.75em;
-
-                            }
-                            .pricing li .oppy {
-
-                                display: flex;
-                                margin-top: 0.5em;
-                                gap: 0.5em;
-                                font-size: 0.95rem;
-                                color: rgb(50, 50, 50);
-                                padding: 0em 0.5em;
-                                
-
-                            }
-
-                            .pricing li .cnt {
-                                padding: 0.5em;
-
-                            
-                            }
-                            .cnt svg{
-                                color: green;
-                            }
-                        </style>
-                        <div class="time">Enterprise</div>
-                        <div class="price">Your Budget</div>
-
-                        <div class="cnt">
-
-
-
-                            <div class="oppy">
-                                <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                                <div class="det">Unlimited Professional Blogging</div>
-
-                            </div>
-
-                            <div class="oppy">
-                                <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                                <div class="det">Image Portfolio (Unlimited)</div>
-                            </div> 
-                        
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Professional SEO Keyword Management</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Full Customisation and layout</div>
-                        </div>
-                        
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Unlimited Pages (FAQ, About, Contact, Portfolio)</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Free Domain and Hosting </div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Annual Social Media Calendar</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Social Media Integration</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Professional Performance Analytics & Insights</div>
-                        </div>
-
-                        <div class="oppy">
-                            <div class="icuu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 14l3.5 3.5L19 6.5" color="currentColor"/></svg></div>
-                            <div class="det">Email Notifications for User Messages </div>
-                        </div>
-
-                        </div>
-
-                        <div class="book" style="padding: 0.5em;text-align: center;background-color: white;border: 1px solid #5D3F6A;color: #5D3F6A;text-align: center;display: flex;justify-content: center;align-items: center;cursor: pointer;border-radius: 0px 0px 10px 10px;margin-top: 1em;"  onclick="window.location.href = 'https://wa.me/+918307802643'">
-                            Get Quotation
-                        </div>
-
-                      
-
-
-
-
-
-
-
-
-
-                        
-
-                    </li>
-
-
-
-                </ul>
-
-                
-                <h1  data-aos-duration="1000" style="justify-content: center;text-align: center;font-family: 'sfpro';color: rgb(40, 40, 40);margin-bottom: 2em;font-size: 1.5rem;margin-top: 2em;">OR</h1>
-
-
-                <div class="oo">
-                    <div class="heading" style="text-align: center;">Start One Month Free Trial 🥳</div>
-                    <div style="color: gray;font-size: 0.9rem;text-align: center;">(No Credit card Required)</div>
-                    <div class="op" style="display: flex;justify-content: center;margin-top: 1em;margin-bottom: 1em;">
-                        <button style="background-color: #5D3F6A;color: white;font-family: 'Poppins';font-weight: 400;padding:0.75em 1.75em;border-radius: 50px;font-size: 1rem; "  onclick="window.location.href='https://forms.gle/9f37iWhct1rWea829'" >Start Free Trial </button>
-                    
-                      </div>
-
-                    
-                </div>
-
-             
-
-
-                  
-             
-
-
-
-
-
-
-                               
-                    
-
-                </div>
-
-
-
-                
-
-  
-          
-
-          
-
-        </div>
-
-
-
-
-       
-
+    <div class="cap-item">
+      <span class="cap-num">02</span>
+      <div class="cap-name">Web & App Dev</div>
+      <p class="cap-desc">Full-stack engineering across React, Node, Flutter, and cloud infrastructure.</p>
     </div>
+    <div class="cap-item">
+      <span class="cap-num">03</span>
+      <div class="cap-name">Brand & Identity</div>
+      <p class="cap-desc">Visual language, motion, and communication systems that endure.</p>
+    </div>
+    <div class="cap-item">
+      <span class="cap-num">04</span>
+      <div class="cap-name">Growth & Scale</div>
+      <p class="cap-desc">Analytics, optimization, and strategy to take products from zero to market.</p>
+    </div>
+  </div>
+</section>
 
-
-
-    <section class="animate" id="faq">
-
-
-        <div class="tp6" style="margin-bottom: 2em;">  <h1  data-aos-duration="1000" style="justify-content: center;text-align: center;font-family: 'sfpro';color: rgb(40, 40, 40);margin-bottom: 1em;margin-top: 2em;">FAQ's</h1>
-    
-          <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
-            <svg xmlns="http://www.w3.org/2000/svg">
-              <symbol viewBox="0 0 24 24" id="expand-more">
-                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
-              </symbol>
-              <symbol viewBox="0 0 24 24" id="close">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
-              </symbol>
-            </svg>
-          </div>
-        
-          
-          
-          <details open>
-            <summary>
-                What is Neighshop?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Neighshop is a platform that allows you to create customizable websites in minutes. We offer easy-to-use tools to design and manage your website, including features like portfolio management, blogging, SEO optimization, and more.</p>
-          </details>
-          
-          <details>
-          
-            <summary>
-                How can I create my website on Neighshop?
-
-
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Simply sign up, choose a plan, and start customizing your website using our intuitive interface. You can modify color themes, edit pages, upload images, and more, all with a few clicks.</p>
-          </details>
-        
-          <details>
-          
-            <summary>
-                Is there a free trial available?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Yes! We offer a one-month free trial for our premium subscription, which gives you access to all features. After the trial period, you can choose to continue with the premium plan for ₹199/month.</p>
-          </details>
-        
-          <details>
-          
-            <summary>
-                Can I customize my website design?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Absolutely! Neighshop offers real-time customization, allowing you to adjust color themes, edit pages like your portfolio and FAQ, and much more to match your brand's style.</p>
-          </details>
-          
-          <details>
-            <summary>
-                Can I connect my own domain?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Yes, you can easily connect your own custom domain to your Neighshop website, giving your site a more professional and personalized appearance.</p>
-          </details>
-
-
-
-               
-          <details>
-            <summary>
-                Can I add a blog to my website?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Yes! Neighshop allows you to publish up to 5 blogs per week, with a total of 1000 blogs. It's a great way to engage with your audience and boost your site's SEO.
-            </p>
-          </details>
-
-
-
-               
-          <details>
-            <summary>
-                Is my website mobile-friendly?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Yes, all websites created on Neighshop are fully responsive, ensuring they look great on any device, including mobile phones, tablets, and desktops.</p>
-          </details>
-
-
-               
-          <details>
-            <summary>
-                What kind of support do you offer?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>We offer customer support via email and live chat to assist with any technical or account-related issues. You can also find helpful resources in our knowledge base.</p>
-          </details>
-
-
-               
-          <details>
-            <summary>
-                Is my website secure?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Yes, we prioritize your security. Neighshop uses industry-standard encryption and security protocols to ensure your website and user data are protected.
-            </p>
-          </details>
-
-
-               
-          <details>
-            <summary>
-                Can I upgrade or downgrade my plan later?
-              <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
-              <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
-            </summary>
-            <p>Yes, you can upgrade or downgrade your subscription at any time. Your billing will adjust accordingly based on the plan you choose.</p>
-          </details>
-
-        
-        </div>
-    
-        
-      <style>
-
-    
-     details {
-      width: 75%;
-      min-height: 5px;
-      max-width: 700px;
-      padding: 45px 70px 45px 45px;
-      margin: 0 auto;
-      position: relative;
-      font-size: 22px;
-      border: 1px solid rgba(0,0,0,.1);
-      border-radius: 15px;
-      box-sizing: border-box;
-      transition: all .3s;
-    }
-    
-    details + details {
-      margin-top: 20px;
-    }
-    
-    details[open] {
-      min-height: 50px;
-      background-color: #f6f7f8;
-      box-shadow: 2px 2px 20px rgba(0,0,0,.2);
-    }
-    
-    details p {
-      color: #96999d;
-      font-weight: 300;
-    }
-    
-    summary {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    
-    summary:focus {
-      outline: none;
-      
-    }
-    
-    summary:focus::after {
-      content: "";
-      height: 100%;
-      width: 100%;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      box-shadow: 0 0 0 5px rebeccapurple;
-    }
-    
-    summary::-webkit-details-marker {
-      display: none
-    }
-    
-    .control-icon {
-      fill: rebeccapurple;
-      transition: .3s ease;
-      pointer-events: none;
-    }
-    
-    .control-icon-close {
-      display: none;
-    }
-    
-    details[open] .control-icon-close {
-      display: initial;
-      transition: .3s ease;
-    }
-    
-    details[open] .control-icon-expand {
-      display: none;
-    }
-    
-      </style>
-    
-    </section>
-    
-
-
-
-    <footer style="display: flex;justify-content: center;padding: 1em;border-top: 1px solid rgb(176, 176, 176);flex-wrap: wrap;gap: 1em;font-family: 'Poppins';">
-        <p>&copy; 2025 Neighshop. All rights reserved. Made with  स्नेह ❤️ from Neigh </p>
-        
-    </footer>
-
-
-
-    
-  
-</body>
-
-</html>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Neighshop Global</div>
+  <div class="footer-copy">© 2025 Neighshop Global. All rights reserved.</div>
+</footer>
 
 <script>
-    AOS.init();
-  </script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
+      cursor.style.opacity = '0.5';
+      ring.style.transform = 'translate(-50%,-50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+      cursor.style.opacity = '1';
+      ring.style.transform = 'translate(-50%,-50%) scale(1)';
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        const siblings = e.target.parentElement?.querySelectorAll('.reveal');
+        if (siblings) {
+          [...siblings].forEach((s, i) => {
+            setTimeout(() => s.classList.add('visible'), i * 80);
+          });
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Counter animation
+  const stats = document.querySelectorAll('.stat-num');
+  const targets = [30, 12];
+  stats.forEach((el, i) => {
+    if (!targets[i]) return;
+    let count = 0;
+    const target = targets[i];
+    const step = target / 40;
+    const timer = setInterval(() => {
+      count = Math.min(count + step, target);
+      el.textContent = Math.round(count) + '+';
+      if (count >= target) clearInterval(timer);
+    }, 40);
+  });
+</script>
+</body>
+</html>
